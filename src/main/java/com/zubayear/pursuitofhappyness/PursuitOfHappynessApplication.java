@@ -1,14 +1,14 @@
 package com.zubayear.pursuitofhappyness;
 
+import com.zubayear.pursuitofhappyness.Web.Endpoints.AgentEndpoints.Create.CreateAgent;
+import com.zubayear.pursuitofhappyness.Web.Endpoints.AgentEndpoints.GetById.GetAgentById;
 import com.zubayear.pursuitofhappyness.Web.Endpoints.AgentEndpoints.List.ListAgent;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.http.MediaType;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.ServerResponse;
 
-import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 import static org.springframework.web.reactive.function.server.RouterFunctions.route;
 
 @SpringBootApplication
@@ -32,4 +32,17 @@ public class PursuitOfHappynessApplication {
                 .build();
     }
 
+    @Bean
+    RouterFunction<ServerResponse> routerFunctionCreate(CreateAgent createAgent) {
+        return route()
+                .POST("/agents", createAgent::createAgent)
+                .build();
+    }
+
+    @Bean
+    RouterFunction<ServerResponse> routerFunctionGetById(GetAgentById getAgentById) {
+        return route()
+                .GET("/agents/{id}", getAgentById::getAgentById)
+                .build();
+    }
 }

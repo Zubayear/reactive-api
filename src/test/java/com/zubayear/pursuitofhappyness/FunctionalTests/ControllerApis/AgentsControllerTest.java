@@ -37,7 +37,7 @@ public class AgentsControllerTest {
 
     @Test
     public void deleteAgent() {
-        String endpoint = "http://localhost:8080/api/agents/1";
+        String endpoint = "http://localhost:8080/api/agents/8";
         ValidatableResponse response = given().when().delete(endpoint).then();
         response.log().all();
         response.statusCode(204);

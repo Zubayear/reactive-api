@@ -1,6 +1,5 @@
 package com.zubayear.pursuitofhappyness.Web.Endpoints.AgentEndpoints.List;
 
-import com.zubayear.pursuitofhappyness.Core.AgentAggregate.Agent;
 import com.zubayear.pursuitofhappyness.Infrastructure.AgentRepository;
 import com.zubayear.pursuitofhappyness.Web.Endpoints.AgentEndpoints.AgentDTO;
 import org.springframework.beans.factory.annotation.Autowired;

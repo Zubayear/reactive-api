@@ -1,6 +1,8 @@
 package com.zubayear.pursuitofhappyness.Core.AgentAggregate;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 
 /**
@@ -9,6 +11,8 @@ import org.springframework.data.annotation.Id;
  * We can only save this to db
  */
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Agent /*extends EntityBase<UUID> implements AggregateRootInterface*/ {
     @Id
     private Long id;
